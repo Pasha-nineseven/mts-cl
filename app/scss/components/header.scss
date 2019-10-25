@@ -1,4 +1,16 @@
-.page-header{
 
+.page-header{
+	padding: 28px 0;
+}
+.page-header__wrap{
+	display: flex;
+	align-items:center;
+	justify-content:space-between;
 }
 
+.page-header__logo{
+	width: 256px;
+	height: 60px;
+	background: url(../img/svg/logo.svg) no-repeat;
+	display: inline-block;
+}

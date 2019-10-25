@@ -4,6 +4,41 @@ $(document).ready(function() {
 	// 	e.preventDefault();
 	// })
 
+
+	//MAIN SLIDER
+	if ($('.main-slider').length>0) {
+		$('.main-slider').slick({
+			// infinite: false,
+			slidesToShow: 1,
+			fade: true,
+			lazyLoad: 'progressive',
+			dots:false,
+			useTransform:true,
+			equalizeHeight: false,
+			"accessibility": false,
+			adaptiveHeight: true,
+			nextArrow: $('.main-slider__right'),
+  			prevArrow: $('.main-slider__left'),
+  			responsive: [
+			    {
+			      	breakpoint: 768,
+			      	settings: {
+				        infinite: false,
+						slidesToShow: 1,
+						fade: true,
+						lazyLoad: 'progressive',
+						useTransform:true,
+						"accessibility": false,
+						nextArrow: $('.main-slider__right'),
+			  			prevArrow: $('.main-slider__left'),
+			  			dots:true,
+			  			arrows:true,
+			    	}
+			    },
+		    ]
+		});
+	}
+
 });
 
 

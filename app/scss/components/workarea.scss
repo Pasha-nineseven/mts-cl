@@ -4,16 +4,43 @@
 		margin: 0;
 		margin-bottom: 20px;
 		font-weight: normal;
+		font-size: 52px;
+		font-family: 'corpide1sscd_light';
 	}
 	h2{
 		margin: 0;
 		margin-bottom: 18px;
 		font-weight: normal;
+		font-size: 40px;
+		font-family: 'corpide1sscd_light';
 	}
 	h3{
 	    margin: 0;
 	    margin-bottom: 15px;
 	    font-weight: normal;
+	    font-size: 36px;
+	    font-family: 'corpide1sscd_light';
+	}
+	h4{
+	    margin: 0;
+	    margin-bottom: 15px;
+	    font-weight: normal;
+	    font-size: 30px;
+	    font-family: 'corpide1sscd_light';
+	}
+	h5{
+	    margin: 0;
+	    margin-bottom: 15px;
+	    font-weight: normal;
+	    font-size: 24px;
+	    font-family: 'corpide1sscd_light';
+	}
+	h6{
+	    margin: 0;
+	    margin-bottom: 15px;
+	    font-weight: normal;
+	    font-size: 18px;
+	    font-family: 'corpide1sscd_light';
 	}
 	p{
 		margin: 0;
@@ -33,5 +60,113 @@
 		display: inline-block;
 		vertical-align: middle;
 		color: #000;
+		border: 1px solid #e4e4e4;
+		border-radius: 5px;
+		height: 36px;
+		padding: 0 12px;
+		transition: border-color 0.3s ease-in-out;
+		&.input-validation-error {
+		    border-color: #f8c1c3;
+		}
+		&.input-large{
+			font-size: 24.2px;
+    		height: 48px;
+		}
+	}
+	input[type="email"]{
+		padding-left: 48px;
+	}
+	textarea{
+		background: #fff;
+		display: inline-block;
+		vertical-align: middle;
+		border: 1px solid #e4e4e4;
+		border-radius: 4px;
+		width: 100%;
+		height: 108px;
+		min-height: 108px;
+		padding: 7px 12px;
+		color: #333;
+		text-align: left;
+		-webkit-appearance: none;
+		resize: vertical;
+	}
+	strong{
+		font-weight: normal;
+		font-family: 'corpide1sscd_bold';
+	}
+	small{
+		font-size: 14px;
+		color: #999999;
+		margin-bottom: 20px;
+		display: block;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 20px;
+		list-style-position: inside;
+		list-style-type: none;
+		&.dots{
+			li{
+				&:before{
+					content: "";
+					display: inline-block;
+					width: 5px;
+					height: 5px;
+					background: #e30613;
+					position: absolute;
+					top: 8px;
+					left: 0; 
+				}
+			}
+		}
+		li{
+			padding-left: 20px;
+			position: relative;
+			margin-bottom: 13px;
+			&:before{
+				content: "";
+				display: inline-block;
+				width: 17px;
+				height: 12px;
+				background: url(../img/svg/tick.svg) center no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 8px;
+				left: -24px; 
+			}
+		}
+	}
+	table{
+		table-layout: fixed;
+		width: 100%;
+		margin-bottom: 20px;
+		th{
+			text-align: left;
+			font-family: 'corpide1sscd_bold';
+			font-weight: normal;
+			border:1px solid #e6e6e6;
+			border-left: 0;
+			padding: 16px;
+			&:last-child{
+				border-right: 0;
+			}
+		}
+		td{
+			border:1px solid #e6e6e6;
+			border-left: 0;
+			padding: 15px;
+			&:last-child{
+				border-right: 0;
+			}
+		}
+		tr{
+			&:nth-child(even){
+				td{
+					background: #fbfbfb;
+				}
+			}
+		}
 	}
 }

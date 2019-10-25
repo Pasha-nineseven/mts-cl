@@ -58,15 +58,7 @@
 
 
 
-// a[href^="http://maps.google.com/maps"]{display:none !important}
-// a[href^="https://maps.google.com/maps"]{display:none !important}
-// .gmnoprint a, .gmnoprint span, .gm-style-cc {
-//     display:none;
-// }
-// .gmnoprint div {
-//     background:none !important;
-// }
-
+@import "components/workarea";
 
 @import "components/header";
 
@@ -79,6 +71,13 @@
   	flex: 1 0 auto;
 }
 
+.layout--index{
+	.page-content{
+		>.container-fluid{
+			max-width: 100%;
+		}
+	}
+}
 
 
 // .wrapper{
@@ -90,21 +89,239 @@
 	// padding: 0;
 	position: relative;
 	width: 100%;
+	padding: 0;
 }
 
 
-// .page-content{
-// 	display: table-cell;
-// 	height: 100%;
-// }
+.btn{
+	background: #E01021;
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	    padding: 14px 26px;
+	border-radius: 5px;
+	transition:all 0.3s ease;
+	font-family: 'corpide1sscd_light';
+	&:hover{
+		background: #cc061a;
+    	color: #fff;
+	}
+}
+
+
+.main-slider{
+	display: none;
+	&.slick-initialized{
+		display: block;
+	}
+	.slick-arrow{
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		background: #fff;
+		border-radius: 50%;
+		text-indent: -9999em;
+		display: inline-block;
+		padding: 0;
+		border: 0;
+	}
+	// .slick-dots{
+	// 	position: absolute;
+	//     /* right: 100px; */
+	//     bottom: 39px;
+	//     max-width: 1290px;
+	//     width: 100%;
+	//     left: 50%;
+	//     transform: translateX(-50%);
+	//     text-align: right;
+	//     padding-right: 117px;
+	//     margin: 0;
+	//     li{
+	//     	display: inline-block;
+	//     	vertical-align: middle;
+	//     	padding: 0;
+	//     	border: 0;
+	//     	width: 10px;
+	//     	height: 10px;
+	//     	border-radius: 50%;
+	//     	background: #e6e6e6;
+	//     	transition:all 0.3s ease;
+	//     	margin: 0;
+	//     	margin-right: 15px;
+	//     	cursor: pointer;
+	//     	&:last-child{
+	//     		margin-right: 0;
+	//     	}
+	//     	&.slick-active,
+	//     	&:hover{
+	//     		background: #e30613;
+	//     	}
+	//     	&:before{
+	//     		display: none;
+	//     	}
+	//     	button{
+	//     		display: none;
+	//     	}
+	//     }
+	// }
+}
+
+.main-slider__left{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 50%;
+	text-indent: -9999em;
+	display: inline-block;
+	padding: 0;
+	border: 0;
+	right: 48px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	&:before{
+		content: '';
+		display: inline-block;
+		width: 14px;
+		height: 24px;
+		background: url(../img/svg/left.svg) center no-repeat;
+		position: absolute;
+		left: 50%;
+		margin-left: -9px;
+		top: 50%;
+		margin-top: -12px;
+	}
+}
+
+
+.main-slider__right{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 50%;
+	text-indent: -9999em;
+	display: inline-block;
+	padding: 0;
+	border: 0;
+	right: 0;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	&:before{
+		content: '';
+		display: inline-block;
+		width: 14px;
+		height: 24px;
+		background: url(../img/svg/right.svg) center no-repeat;
+		position: absolute;
+		left: 50%;
+		margin-left: -6px;
+		top: 50%;
+		margin-top: -12px;
+	}
+}
+
+.main-slider__item{
+	// background-color: #b7c2c7;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 463px;
+	padding-bottom: 50px;
+}
+
+
+.main-slider__info{
+	max-width: 50%;
+	color: #fff;
+	padding-top: 73px;
+	h1{
+		 margin-bottom: 12px;
+	}
+}
+
+.main-slider-wrap{
+	position: relative;
+}
+.main-slider-arrows{
+	position: absolute;
+	bottom: 70px;
+	left: 50%;
+	width: 100%;
+	max-width: 1290px;
+	transform: translateX(-50%);
+}
+
+
+
+.main-slider__txt{
+	font-size: 24px;
+	margin-bottom: 43px;
+}
 
 
 
 
 
 
+.t-center{
+	text-align: center;
+}
 
-@import "components/workarea";
+
+
+
+.benefits{
+	background: #F7F7F7;
+	padding: 40px 0;
+	.item{
+		width: 25%;
+	}
+	h2{
+		margin-bottom: 50px;
+	}
+}
+
+.list{
+	display: flex;
+	flex-wrap:wrap;
+}
+.item{
+	text-align: center;
+	margin-bottom: 40px;
+	padding: 0 20px;
+}
+
+.item__icon{
+	width: 104px;
+	height: 104px;
+	border-radius: 50%;
+	background: #fff;
+	border: 1px solid #959595;
+	display: inline-block;
+	margin-bottom: 16px;
+	display: inline-flex;
+	align-items:center;
+	justify-content:center;
+	img{
+		display: block;
+		max-width: 100%;
+	}
+}
+
+.item__icon--filter{
+	img{
+		filter:grayscale(100%);
+	}
+}
+
+.services{
+	padding: 40px 0;
+	h2{
+		margin-bottom: 50px;
+	}
+	.item{
+		width: 33.333%;
+	}
+}
 
 @import "components/footer";
 
