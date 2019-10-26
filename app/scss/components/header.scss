@@ -1,6 +1,14 @@
 
 .page-header{
-	padding: 28px 0;
+	padding: 23px 0;
+    position: fixed;
+    width: 100%;
+	z-index: 5;
+	transition: all 0.2s linear;
+	&.fixed{
+		background: #fff;
+		padding: 10px 0;
+	}
 }
 .page-header__wrap{
 	display: flex;
@@ -14,3 +22,9 @@
 	background: url(../img/svg/logo.svg) no-repeat;
 	display: inline-block;
 }
+
+.page-header__links{
+	display: flex;
+	align-items: center;
+}
+
