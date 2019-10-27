@@ -72,8 +72,8 @@
 		height: 56px;
 		padding: 0 12px;
 		transition: border-color 0.3s ease-in-out;
-		&.input-validation-error {
-		    border-color: #f8c1c3;
+		&:focus{
+		    border: 1px solid #BDBDBD;
 		}
 	}
 	textarea{
@@ -90,6 +90,10 @@
 		text-align: left;
 		-webkit-appearance: none;
 		resize: vertical;
+		transition: border-color 0.3s ease-in-out;
+		&:focus{
+		    border: 1px solid #BDBDBD;
+		}
 	}
 	strong{
 		font-weight: normal;
