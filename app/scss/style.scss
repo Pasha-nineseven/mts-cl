@@ -118,6 +118,7 @@ body.fixed {
 	border-radius: 5px;
 	transition:all 0.3s ease;
 	font-family: 'corpide1sscd_light';
+	border: 0;
 	&:hover{
 		background: #cc061a;
     	color: #fff;
@@ -134,45 +135,6 @@ body.fixed {
 		display:flex;
 		min-width: 100%;
 	}
-	// .slick-dots{
-	// 	position: absolute;
-	//     /* right: 100px; */
-	//     bottom: 39px;
-	//     max-width: 1290px;
-	//     width: 100%;
-	//     left: 50%;
-	//     transform: translateX(-50%);
-	//     text-align: right;
-	//     padding-right: 117px;
-	//     margin: 0;
-	//     li{
-	//     	display: inline-block;
-	//     	vertical-align: middle;
-	//     	padding: 0;
-	//     	border: 0;
-	//     	width: 10px;
-	//     	height: 10px;
-	//     	border-radius: 50%;
-	//     	background: #e6e6e6;
-	//     	transition:all 0.3s ease;
-	//     	margin: 0;
-	//     	margin-right: 15px;
-	//     	cursor: pointer;
-	//     	&:last-child{
-	//     		margin-right: 0;
-	//     	}
-	//     	&.slick-active,
-	//     	&:hover{
-	//     		background: #e30613;
-	//     	}
-	//     	&:before{
-	//     		display: none;
-	//     	}
-	//     	button{
-	//     		display: none;
-	//     	}
-	//     }
-	// }
 }
 
 .main-slider__left{
@@ -529,6 +491,183 @@ a.breadcrumbs__item{
 	max-width: 480px;
 }
 
+
+.popup{
+	width: 600px;
+	line-height: 1.5;
+	.btn{
+		padding: 11px 25px;
+	}
+	.checkbox-item{
+		margin-bottom: 27px;
+		position: relative;
+		z-index: 1;
+		padding-top: 6px;
+	}
+}
+.dnone{
+	display: none;
+}
+
+
+.fancybox-container {
+    z-index: 14;
+}
+.fancybox-is-open .fancybox-bg {
+    opacity: .8;
+}
+.fancybox-bg {
+	background: #0B0B0B;
+}
+.fancybox-content {
+	padding: 24px 58px 32px 65px;
+}
+.popup__top{
+	margin: 0;
+	margin-bottom: 19px;
+	font-weight: normal;
+	font-size: 40px;
+	font-family: 'corpide1sscd_regular';
+	color: #000;
+	padding-left: 17px;
+}
+
+.input-wrap{
+	margin-bottom: 16px;
+	position: relative;
+}
+
+.input-label{
+	background: #fff;
+    padding: 0 3px;
+    position: absolute;
+    left: 14px;
+    top: -7px;
+	line-height: 1;
+	z-index: 2;
+}
+.jq-selectbox{
+	width: 100%;
+	display: block;
+	position: relative;
+	select{
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	&.opened{
+		z-index: 3!important;
+		.jq-selectbox__trigger-arrow{
+			transform: translateY(-50%) rotate(-180deg);
+		}
+	}
+}
+
+
+.jq-selectbox__select{
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	color: #000;
+	border: 1px solid #EDEDED;
+	border-bottom-color: #EDEDED;
+	border-radius: 3px;
+	height: 56px;
+	line-height: 56px;
+	padding: 0 30px 0 12px;
+	transition: border-color 0.3s ease-in-out;
+	font: inherit;
+	color: inherit;
+	background: #fff!important;
+	text-shadow:none;
+	position: relative;
+}
+.jq-selectbox__select-text{
+	height: 100%;
+	line-height: 56px;
+	color: #000;
+}
+
+.jq-selectbox__select:active{
+	background: #fff;
+}
+.jq-selectbox.focused .jq-selectbox__select {
+	border: 1px solid #EDEDED;
+}
+
+
+.jq-selectbox__dropdown ul::-webkit-scrollbar {
+	width: 8px;
+}
+
+
+
+.jq-selectbox__dropdown ul::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: rgba(0,0,0,0.3);
+}
+
+
+.jq-selectbox__trigger {
+	border-left: 0;	
+}
+
+.jq-selectbox__trigger-arrow{
+	border: 0;
+	width: 15px;
+	height: 9px;
+	background: url(../img/svg/s-arrow-r.svg) center no-repeat;
+	transition:all 0.3s ease;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+.jq-selectbox__dropdown {
+	margin: -1px 0 0;
+	border: 1px solid #EDEDED;
+	border-radius: 5px;
+	font: inherit;
+	position: absolute;
+	top: 100%!important;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		
+	ul{
+		margin: 0;
+		li{
+			padding-left: 12px;
+			margin-bottom: 0;
+			color: #333;
+			background: #fff;
+			transition:all 0.3s ease;
+			border-bottom: 1px solid #EDEDED;
+			white-space: normal;
+			&:before{
+				display: none;
+			}
+			&:hover{
+				background: #f5f5f5;
+				color: #333;
+			}
+		}
+	}
+}
+
+.jq-selectbox li.selected{
+	background: #f5f5f5;
+	color: #333;
+}
+
+
+.jq-selectbox__dropdown ul{
+	max-height: 250px;
+	overflow-y: auto;
+}
+.jq-selectbox.opened + .input-label{
+    z-index: 4 !important;
+}
 
 @import "components/footer";
 

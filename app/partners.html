@@ -35,7 +35,7 @@
 									Контакты
 								</a>
 							</nav>
-							<a href="#" class="btn">Тестировать бесплатно</a>
+							<a href="#popup-form" class="btn js-popup-inline">Тестировать бесплатно</a>
 							<a href="tel:0990" class="top-call">
 								<div class="top-call__icon"></div>
 								0990
@@ -100,7 +100,7 @@
                                 С удовольствием обсудим возможности сотрудничества.
                             </p>
                             <br>
-                            <a href="#" class="btn">Написать</a>
+							<a href="#popup-form" class="btn js-popup-inline">Написать</a>
                         </div>
                     </div>
 				<!--end CONTENT-PART -->
@@ -117,22 +117,62 @@
 					<div class="page-footer__info">
 						Совместное общество с ограниченной ответственностью «Мобильные<br> ТелеСистемы» УНП 800013732. Дата регистрации 04.02.2002
 					</div>
-					
-						<a href="tel:0990" class="page-footer__call">0990</a>
-						<div class="socials">
-							<a href="#" class="socials__item socials__item--vk"><i></i></a>
-							<a href="#" class="socials__item socials__item--tw"><i></i></a>
-							<a href="#" class="socials__item socials__item--ok"><i></i></a>
-							<a href="#" class="socials__item socials__item--fb"><i></i></a>
-						</div>	
-				
+					<a href="tel:0990" class="page-footer__call">0990</a>
+					<div class="socials">
+						<a href="#" class="socials__item socials__item--vk"><i></i></a>
+						<a href="#" class="socials__item socials__item--tw"><i></i></a>
+						<a href="#" class="socials__item socials__item--ok"><i></i></a>
+						<a href="#" class="socials__item socials__item--fb"><i></i></a>
+					</div>	
 				</div>
-				
-				
-				
 			</div>
 		</footer>
 			
+
+		<div id="popup-form" class="popup dnone">
+			<div class="popup__top">
+				Есть вопрос? Решим!
+			</div>	
+			<form action="#" method="post">
+				<div class="input-wrap">
+					<select class="fs" data-placeholder=" ">
+						<option></option>
+						<option value="Тема 1">Тема 1</option>
+						<option value="Тема 2">Тема 2</option>
+						<option value="Тема 3">Тема 3</option>
+						<option value="Тема 4">Тема 4</option>
+					</select>
+					<div class="input-label">Тема сообщения</div>
+				</div>
+				<div class="input-wrap">
+					<input type="text">
+					<div class="input-label">Ваша фамилия и имя</div>
+				</div>
+				<div class="input-wrap">
+					<input type="text">
+					<div class="input-label">Контактный телефон</div>
+				</div>
+				<div class="input-wrap">
+					<input type="text">
+					<div class="input-label">Электронная почта</div>
+				</div>
+				<div class="input-wrap">
+					<input type="text">
+					<div class="input-label">Ваша компания</div>
+				</div>
+				<div class="input-wrap">
+					<textarea></textarea>
+					<div class="input-label">Текст сообщения</div>
+				</div>
+				<div class="checkbox-item">
+					<input type="checkbox" id="agree1" name="agree">
+					<label for="agree1">
+							Даю согласие на обработку моих персональных данных в порядке, установленном законодательством Республики Беларусь
+					</label>
+				</div>
+				<button type="submit" class="btn">Отправить</button>
+			</form>
+		</div>
 		
 
 		<script src="js/libs.min.js"></script>

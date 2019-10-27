@@ -139,6 +139,33 @@ $(document).ready(function() {
 		});
 	}
 
+	//FS
+    if ($('.fs').length>0) {
+    	$('.fs').styler();
+    }
+
+	//POPUP-INLINE
+    $(".js-popup-inline").fancybox({
+        speed : 330,
+        transitionEffect: "slide", 
+        animationEffect: "zoom-in-out", 
+        infobar: false,
+        buttons: [
+            "close"
+		],
+		beforeShow: function() {
+			document.body.appendChild(scrollDiv);
+			var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+			//scroll-detect
+			var ifHasScroll = $('body').hasVerticalScrollBar();
+			if (ifHasScroll) {
+				$('.page-header').css('padding-right',scrollbarWidth);
+			}
+		},
+		afterClose: function() {
+			$('.page-header').removeAttr("style");
+		},
+    });
 
 	initItemsSlider();
 });
