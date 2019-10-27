@@ -253,5 +253,6 @@ $('body').append(
 		<li><a href="index.html">Index</a></li> \
 		<li><a href="partners.html">Partners</a></li> \
 		<li><a href="contact.html">Contacts</a></li> \
+		<li><a href="cloud.html">Cloud</a></li> \
 	</ol> \
 </div>');

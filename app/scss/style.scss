@@ -93,6 +93,16 @@ ymaps[class$="-copyright"] {
 	background: #fff;
 }
 
+.layout--cloud{
+	background: #fff;
+	.page-content{
+		>.container-fluid{
+			max-width: 100%;
+		}
+	}
+	
+}
+
 body.fixed {
     overflow: hidden;
 }
@@ -570,8 +580,7 @@ a.breadcrumbs__item{
 			transform: translateY(-50%) rotate(-180deg);
 		}
 	}
-	&.opened,
-	&.focused{
+	&.opened{
 		.jq-selectbox__select{
 			border: 1px solid #BDBDBD!important;
 		}
@@ -821,7 +830,11 @@ a.contacts__link{
 .contacts-map__img{
     position: absolute;
     left: -97px;
-    top: -73px;
+	top: -73px;
+	img{
+		max-width: 100%;
+		display: block;
+	}
 }
 .contacts-map__item{
 	margin-bottom: 19px;
@@ -851,6 +864,26 @@ a.contacts__link{
 		position: absolute;
 		top: 10px;
     	left: -47px;
+	}
+}
+
+.contacts-map__item--link{
+	color: #000;
+	&:hover{
+		color: $alt-color;
+	}
+}
+
+.cloud{
+	//background: url(../img/content/cloud-bg.png) center bottom/cover no-repeat;
+}
+.cloud__add{
+	font-size: 32px;
+	color: #000;
+	max-width: 859px;
+	margin-bottom: 30px;
+	&+p{
+		max-width: 859px;
 	}
 }
 
