@@ -79,11 +79,17 @@
 	}
 }
 
+body.fixed {
+    overflow: hidden;
+}
+.scrollbar-measure {
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+}
 
-// .wrapper{
-// 	display: table-row;
-// 	height: 100%;
-// }
 .container-fluid{
 	max-width: 1200px;
 	// padding: 0;
@@ -226,6 +232,7 @@
 .main-slider__info{
 	max-width: 550px;
 	padding-top: 80px;
+	position: relative;
 	h1{
 		margin-bottom: 15px;
 		color: $alt-color;
@@ -266,6 +273,7 @@
     top: 49px;
 	width: 543px;
 	height: 378px;
+	pointer-events: none;
 }
 
 
@@ -401,6 +409,7 @@
 	justify-content: center;
 	img{
 		display: block;
+		max-width: 100%;
 	}
 }
 .clients__icon{
@@ -411,54 +420,6 @@
 
 
 
-
-
-
-.top-nav{
-	margin-right: 79px;
-	display: flex;
-	margin-top: -3px;
-}
-.top-nav__item{
-	margin-right: 59px;
-	color: #000;
-	&:last-child{
-		margin-right: 0;
-	}
-}
-.top-nav__item--calc{
-	.top-nav__icon{
-		background: url(../img/svg/calculator.svg) center no-repeat;
-	}
-	
-}
-.top-nav__item--partner{
-	.top-nav__icon{
-		background: url(../img/svg/partners.svg) center no-repeat;
-	}
-	
-}
-.top-nav__item--contact{
-	.top-nav__icon{
-		background: url(../img/svg/contact.svg) center no-repeat;
-	}
-	
-}
-
-.top-nav__icon{
-	height: 40px;
-}
-
-.top-call{
-	display: inline-block;
-	margin-left: 58px;
-	color: #000;
-}
-
-.top-call__icon{
-	height: 34px;
-	background: url(../img/svg/call.svg) center no-repeat;
-}
 
 
 
