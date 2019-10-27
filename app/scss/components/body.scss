@@ -40,9 +40,9 @@ a{
 	transition: color 0.3s linear;
 	text-decoration: none;
 	&:not([class]){
-		color: #058ACD;
+		color: #000;
 		&:hover{
-			color: #056493;
+			color: $alt-color;
 		}
 	}
 }

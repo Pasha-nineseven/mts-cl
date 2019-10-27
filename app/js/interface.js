@@ -73,18 +73,17 @@ $(document).ready(function() {
 			    {
 			      	breakpoint: 768,
 			      	settings: {
-				        infinite: false,
-						slidesToShow: 1,
-						fade: true,
-						lazyLoad: 'progressive',
-						useTransform:true,
-						"accessibility": false,
-						nextArrow: $('.main-slider__right'),
-			  			prevArrow: $('.main-slider__left'),
-			  			dots:false,
-			  			arrows:true,
+				        adaptiveHeight: true,
 			    	}
-			    },
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						adaptiveHeight: true,
+						arrows:false,
+						dots:true,
+				  }
+			  },
 		    ]
 		});
 	}
@@ -110,11 +109,38 @@ $(document).ready(function() {
 				        slidesToShow: 4,
 						slideToScroll:1,
 			    	}
-			    },
+				},
+				{
+					breakpoint: 850,
+					settings: {
+					  	slidesToShow: 3,
+					  	slideToScroll:1,
+					},
+				},
+				{
+					breakpoint: 768,
+					settings: {
+					  	slidesToShow: 2,
+						slideToScroll:1,
+						arrows:false,
+						dots:true,
+					},
+				},
+				{
+					breakpoint: 400,
+					settings: {
+					  	slidesToShow: 1,
+						slideToScroll:1,
+						arrows:false,
+						dots:true,
+					},		
+			  	},
 		    ]
 		});
 	}
 
+
+	initItemsSlider();
 });
 
 $(window).scroll(function(){
@@ -125,7 +151,33 @@ $(window).scroll(function(){
     else header.removeClass('fixed');
 });
 
+
+$(window).resize(function () {
+	initItemsSlider();
+});
+
 // functions
+function initItemsSlider() {
+	var $items = $('.list');
+	if($(window).width() < 750) {
+		$items.not('.slick-initialized').slick({
+			slidesToShow: 2,
+			slideToScroll:1,
+			lazyLoad: 'progressive',
+			dots:true,
+			useTransform:true,
+			equalizeHeight: false,
+			"accessibility": false,
+			adaptiveHeight: false,
+			arrows:false,
+		});
+	} else{
+		if($items.hasClass('slick-initialized')) {
+			$items.slick("unslick");
+		}
+	}
+}
+
 (function($) {
     $.fn.hasVerticalScrollBar = function() {
         return this.get(0) ? parseInt( this.get(0).scrollHeight ) > parseInt( this.innerHeight() ) : false;
@@ -133,16 +185,16 @@ $(window).scroll(function(){
 })(jQuery);
 
 // links pages
-// $('body').append(
-// 	'<div style="position: fixed; z-index: 1005; bottom: 0; right: 0; background: #fff; border: solid 1px #828286; width: 200px;"> \
-// 		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px; text-decoration: none; font-size: 16px" onclick="$(this).parent().hide()">Close X</a> \
-// 	<style> \
-// 		#pages { padding: 10px 20px 0 50px; font-size: 18px; } \
-// 		#pages a { text-decoration: none; } \
-// 		#pages li { margin: 5px 0; } \
-// 	</style> \
-// 	<ol id="pages"> \
-// 		<li><a href="about.html">About</a></li> \
-// 		<li><a href="index.html">Index</a></li> \
-// 	</ol> \
-// </div>');
+$('body').append(
+	'<div style="position: fixed; z-index: 1005; bottom: 0; right: 0; background: #fff; border: solid 1px #828286; width: 200px;"> \
+		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px; text-decoration: none; font-size: 16px" onclick="$(this).parent().hide()">Close X</a> \
+	<style> \
+		#pages { padding: 7px 20px 0 25px;} \
+		#pages a { text-decoration: none; } \
+		#pages li { margin: 5px 0; } \
+	</style> \
+	<ol id="pages"> \
+		<li><a href="index.html">Index</a></li> \
+		<li><a href="partners.html">Partners</a></li> \
+	</ol> \
+</div>');

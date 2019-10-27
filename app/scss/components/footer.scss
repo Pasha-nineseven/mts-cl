@@ -22,6 +22,7 @@
 	line-height: 36px;
 	text-align: center;
 	margin-right: 11px;
+	transition: background 0.3s ease;
 	i{
 		display: inline-block;
 		vertical-align: middle;
@@ -38,6 +39,9 @@
 		background: url(../img/svg/vk.svg);
 		background-size: cover; 
 	}
+	&:hover{
+		background: #006691;
+	}
 }
 .socials__item--tw{
 	i{
@@ -46,6 +50,9 @@
 		background: url(../img/svg/tw.svg);
 		background-size: cover;
 		margin-top: -2px;
+	}
+	&:hover{
+		background: #00aff5;
 	}
 }
 .socials__item--ok{
@@ -56,6 +63,9 @@
 		background-size: cover;
 		    margin-top: -2px;
 	}
+	&:hover{
+		background: #ff9100;
+	}
 }
 .socials__item--fb{
 	i{
@@ -64,6 +74,9 @@
 		background: url(../img/svg/fb.svg);
 		background-size: cover;
 		    margin-top: -2px;
+	}
+	&:hover{
+		background: #00569e;
 	}
 }
 
@@ -97,7 +110,9 @@
 		top: 50%;
 		border-radius: 50%;
 		transform: translateY(-50%);
-		
+	}
+	&:hover{
+		color: #ff0109;
 	}
 }
 
