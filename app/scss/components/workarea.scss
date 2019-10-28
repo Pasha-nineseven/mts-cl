@@ -116,12 +116,13 @@
 				&:before{
 					content: "";
 					display: inline-block;
-					width: 5px;
-					height: 5px;
+					width: 6px;
+					height: 6px;
 					background: #e30613;
 					position: absolute;
-					top: 8px;
-					left: 0; 
+					top: 12px;
+    				left: 2px;
+					border-radius: 50%;
 				}
 			}
 		}
@@ -137,7 +138,7 @@
 				background: url(../img/svg/tick.svg) center no-repeat;
 				background-size: cover;
 				position: absolute;
-				top: 8px;
+				top: 12px;
 				left: -24px; 
 			}
 		}

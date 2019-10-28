@@ -3,6 +3,9 @@
     body{
         padding-right: 0!important;
     }
+    .page-header{
+        padding-right: 0!important;
+    }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -39,7 +42,11 @@
     .clients__slider {
         padding: 0 65px;
     }
-    
+    .cloud{
+        .container-fluid{
+            padding: 0;
+        }
+    }
 }
 @media screen and (max-width: 1200px){
     .contacts__list{
@@ -131,6 +138,16 @@
         br{
             display: none;
         }
+    }
+    .cloud__item {
+        padding: 13px 16px 12px;
+    }
+    .cloud-benefits__item {
+        padding: 11px 19px 15px;
+    }
+    .cloud__img,
+    .cloud__title{
+        padding-left: 0;
     }
 }
 
@@ -237,7 +254,40 @@
     .contacts__link {
         max-width: 300px;
     }
-    
+    .cloud__add {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .cloud-benefits {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .cloud-question__item {
+        padding: 20px 20px 20px 50px;
+    }
+    .cloud-question__top{
+        font-size: 24px;
+    }
+    .cloud-question__top:before {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        left: -37px;
+        top: 1px;
+    }
+    .cloud__list,
+    .cloud-benefits{
+        flex-wrap:wrap;
+    }
+    .cloud__item,
+    .cloud-benefits__item{
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 2px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -281,6 +331,17 @@
     .socials {
         margin-top: 25px;
         min-width: 100%;
+    }
+    .popup{
+        width: 100%;
+    }
+    .fancybox-content {
+        padding: 24px 31px 24px 20px;
+    }
+    .popup__top {
+        font-size: 30px;
+        padding-left: 0;
+        line-height: 1.2;
     }
 }
 

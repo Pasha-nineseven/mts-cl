@@ -168,7 +168,10 @@ $(document).ready(function() {
     });
 
 	initItemsSlider();
-	ymaps.ready(initializeDefaultMap);
+	
+	if ($('#contacts-map').length>0) {
+		ymaps.ready(initializeDefaultMap);
+	}
 });
 
 $(window).scroll(function(){
@@ -207,31 +210,28 @@ function initItemsSlider() {
 }
 
 function initializeDefaultMap() {
-    if ($('#contacts-map').length>0) {
-
-        var myMap = new ymaps.Map("contacts-map", {
-            center:[53.899888,27.566757],
-            zoom: 13,
-            controls: []
-        }, {
-            suppressMapOpenBlock: true
-        }); 
-                
-        var myPlacemark = new ymaps.Placemark([53.899888,27.566757],{
-                // balloonContentBody: 'Адрес',
-            },{
-            iconLayout: 'default#image',
-            iconImageHref: "img/content/label.png", 
-            iconImageSize: [40,51],
-            iconImageOffset: [-20, -51]
-        }); 
+	var myMap = new ymaps.Map("contacts-map", {
+		center:[53.899888,27.566757],
+		zoom: 13,
+		controls: []
+	}, {
+		suppressMapOpenBlock: true
+	}); 
+			
+	var myPlacemark = new ymaps.Placemark([53.899888,27.566757],{
+			// balloonContentBody: 'Адрес',
+		},{
+		iconLayout: 'default#image',
+		iconImageHref: "img/content/label.png", 
+		iconImageSize: [40,51],
+		iconImageOffset: [-20, -51]
+	}); 
 
 
-        myMap.controls.add(new ymaps.control.ZoomControl({options: { position: { right: 10, top: 90 }}}));
-        myMap.behaviors.disable('scrollZoom');
+	myMap.controls.add(new ymaps.control.ZoomControl({options: { position: { right: 10, top: 90 }}}));
+	myMap.behaviors.disable('scrollZoom');
 
-        myMap.geoObjects.add(myPlacemark);
-    }
+	myMap.geoObjects.add(myPlacemark);
 }
 
 (function($) {
