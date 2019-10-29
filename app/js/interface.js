@@ -1,3 +1,15 @@
+// Number.prototype.formatMoney = function(c, d, t){
+//     var n = this,
+//         c = isNaN(c = Math.abs(c)) ? 2 : c,
+//         d = d == undefined ? "." : d,
+//         t = t == undefined ? "," : t,
+//         s = n < 0 ? "-" : "",
+//         i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+//         j = (j = i.length) > 3 ? j % 3 : 0;
+//     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+// };
+
+
 $(document).ready(function() {
 	flexibility(document.documentElement);
 	//HEADER FIXED
@@ -172,6 +184,38 @@ $(document).ready(function() {
 	if ($('#contacts-map').length>0) {
 		ymaps.ready(initializeDefaultMap);
 	}
+
+
+	//TABS
+    $(".tab_content").hide();
+    $("ul.tabs li:first").addClass("active").show();
+    $(".tab_content:first").show();
+    //Событие по клику
+    $(".tabs-horizontal__item").click(function(e) {
+    	e.preventDefault();
+        $(".tabs-horizontal__item").removeClass("active");
+        $(this).addClass("active");
+        $(".tab_content").hide();
+        var activeTab = $(this).find("a").attr("href");
+        $(activeTab).fadeIn();
+    });
+
+
+    //TABS
+    $(".tab_content-vert").hide();
+    $('.tab_container_vert').each(function (index, value){
+	  	$(this).find('.tab_content-vert:first').show();
+	  	$(this).find('.tabs-vert li:first').addClass("active").show();
+	});
+    //Событие по клику
+    $(".tabs-vertical__item").click(function(e) {
+    	e.preventDefault();
+        $(this).parents('.tabs-vert').find(".tabs-vertical__item").removeClass("active");
+        $(this).addClass("active");
+        $(this).parents('.tab_content-wrapper').find(".tab_content-vert").hide();
+        var activeTab = $(this).find("a").attr("href");
+        $(activeTab).fadeIn();
+	});
 });
 
 $(window).scroll(function(){
@@ -211,14 +255,14 @@ function initItemsSlider() {
 
 function initializeDefaultMap() {
 	var myMap = new ymaps.Map("contacts-map", {
-		center:[53.899888,27.566757],
+		center:[53.92671475,27.61556353524928],
 		zoom: 13,
 		controls: []
 	}, {
 		suppressMapOpenBlock: true
 	}); 
 			
-	var myPlacemark = new ymaps.Placemark([53.899888,27.566757],{
+	var myPlacemark = new ymaps.Placemark([53.92671475,27.61556353524928],{
 			// balloonContentBody: 'Адрес',
 		},{
 		iconLayout: 'default#image',
@@ -233,6 +277,100 @@ function initializeDefaultMap() {
 
 	myMap.geoObjects.add(myPlacemark);
 }
+
+//SLIDER-RANGE
+function syncDefaultValues() {
+	$('.slider-range').each(function() {
+	  	var val = $(this).attr('data-val');
+	  	$(this).parent().find('.slider-str-val').html(val);
+	});
+}
+  
+function updateTotalPrice() {
+	$('.sliders-container').each(function() {
+	  	var total = 0;
+  
+	  	$(this).find('.slider-lines [data-key]').each(function () {
+			var key = $(this).attr('data-key');
+			var val = $(this).attr('data-val');
+			var coef = $("[name=\""+key+"\"]").val();
+			total += coef * val;
+	  	});
+  
+	  	$(this).find('#totalPrice').html(total.formatMoney(2, '.', ' '));
+	});
+}
+$(function() {
+	$( ".slider-range" ).each(function(){
+		var curr_slide=$(this).slider({
+			min: parseInt($(this).attr("data-min")),
+			max: parseInt($(this).attr("data-max")),
+			value: parseInt($(this).attr("data-val")), 
+			step: parseFloat($(this).attr("data-step")),
+			animate: 400,
+			range: "min",
+			slide: function( event, ui ) {
+                $(this).parent().find('.slider-str-val').html(ui.value);
+                $(this).attr('data-val', ui.value);
+                var key = $(this).attr('data-key');
+                //updateTotalPrice();
+            }
+		});
+	})
+	.slider("pips", {
+		rest: "label",
+		// suffix: "Гб",
+	});
+
+
+	var valTag = '.ui-slider-pip-label';
+	var countLablesOnLine = 5;
+	$('.platform-view__item').each(function() {
+		var all = $(this).find(valTag).length;
+		if(all <= countLablesOnLine) {
+			$(this).find(valTag).show();
+			return;
+		}
+
+		var step = parseInt((all+countLablesOnLine) / countLablesOnLine);
+		var i = 0;
+		var stepCount = 1;
+		$(this).find(valTag).each(function() {
+			if(i-- < 1 && ++stepCount <= countLablesOnLine) {
+				$(this).addClass("bigboss").show();
+				i = step;
+			}
+		});
+		$(this).find(valTag+":last-child").addClass("bigboss").show();
+	});
+
+	$(valTag+":not(.bigboss) .ui-slider-label").html("");
+});
+
+$(function() {
+	$('.mobile-selector').change(function(){
+        $('.tab_content').hide();
+        var tVal = ($(this).val());
+        $('#' + tVal).show();
+    });
+
+	$('.mobile-selector-vertical').change(function(){
+        $(this).parents('.tab_content').find('.tab_content-vert').hide();
+        var tVal_vert = ($(this).val());
+        $('#' + tVal_vert).show();
+	});
+	if(location.hash) {
+		$(".tab_container .tab_content").hide();
+		$(location.hash).show();
+
+		$(".tabs-horizontal__item.active").removeClass("active");
+		$(".tabs-horizontal__link[href=\""+location.hash+"\"]").parent().addClass("active");
+
+		$('html, body').animate({
+			scrollTop: $(location.hash).offset().top
+		}, 500);
+	}
+});
 
 (function($) {
     $.fn.hasVerticalScrollBar = function() {
@@ -254,5 +392,6 @@ $('body').append(
 		<li><a href="partners.html">Partners</a></li> \
 		<li><a href="contact.html">Contacts</a></li> \
 		<li><a href="cloud.html">Cloud</a></li> \
+		<li><a href="calculator.html">Calculator</a></li> \
 	</ol> \
 </div>');
