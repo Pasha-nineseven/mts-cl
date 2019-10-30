@@ -325,7 +325,6 @@ $(function() {
 
 	var valTag = '.ui-slider-pip-label';
 	var countLablesOnLine = 5;
-	//РїРѕРєР°Р¶РµРј С‚РѕР»СЊРєРѕ 5 С†РёС„СЂ РЅР° Р»РёРЅРёРё
 	$('.platform-view__item').each(function() {
 		var all = $(this).find(valTag).length;
 		if(all <= countLablesOnLine) {

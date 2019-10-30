@@ -36,12 +36,12 @@
 
 
 .top-nav{
-	margin-right: 79px;
+	margin-right: 52px;
 	display: flex;
 	margin-top: -3px;
 }
 .top-nav__item{
-	margin-right: 59px;
+	margin-right: 40px;
 	color: #000;
 	&:last-child{
 		margin-right: 0;
@@ -50,23 +50,25 @@
 		color: #ff0109;
 	}
 }
+.top-nav__item--about{
+	.top-nav__icon{
+		background: url(../img/svg/cloud.svg) center no-repeat;
+	}
+}
 .top-nav__item--calc{
 	.top-nav__icon{
 		background: url(../img/svg/calculator.svg) center no-repeat;
 	}
-	
 }
 .top-nav__item--partner{
 	.top-nav__icon{
 		background: url(../img/svg/partners.svg) center no-repeat;
 	}
-	
 }
 .top-nav__item--contact{
 	.top-nav__icon{
 		background: url(../img/svg/contact.svg) center no-repeat;
 	}
-	
 }
 
 .top-nav__icon{
