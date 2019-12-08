@@ -81,6 +81,11 @@ $(document).ready(function() {
 			adaptiveHeight: false,
 			nextArrow: $('.main-slider__right'),
   			prevArrow: $('.main-slider__left'),
+  			autoplay: true, 
+    		autoplaySpeed: 14000,
+  			speed: 500,
+  			cssEase: 'ease-in-out',
+  			pauseOnHover:false,
   			responsive: [
 			    {
 			      	breakpoint: 768,

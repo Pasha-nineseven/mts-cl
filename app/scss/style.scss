@@ -228,15 +228,41 @@ body.fixed {
 }
 
 .main-slider__item{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 685px;
     height: auto !important;
     padding-bottom: 20px;
     padding-top: 94px;
+    position: relative;
 }
 
+.main-slider__bg{
+	background-size: cover;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	animation: slide 11500s infinite linear;
+}
+
+@-webkit-keyframes slide {
+	100%{
+	    background-position:120000px 0px;
+	}
+}
+@-moz-keyframes slide {
+    100%{
+	    background-position:120000px 0px;
+	}
+}
+
+@-ms-keyframes slide {
+    100%{
+	    background-position:120000px 0px;
+	}
+}
 
 .main-slider__info{
 	max-width: 550px;
