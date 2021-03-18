@@ -256,6 +256,25 @@ function initItemsSlider() {
 			$items.slick("unslick");
 		}
 	}
+
+	var $itemsNews = $('.listNews');
+	if($(window).width() < 750) {
+		$itemsNews.not('.slick-initialized').slick({
+			slidesToShow: 1,
+			slideToScroll:1,
+			lazyLoad: 'progressive',
+			dots:true,
+			useTransform:true,
+			equalizeHeight: false,
+			"accessibility": false,
+			adaptiveHeight: false,
+			arrows:false,
+		});
+	} else{
+		if($itemsNews.hasClass('slick-initialized')) {
+			$itemsNews.slick("unslick");
+		}
+	}
 }
 
 function initializeDefaultMap() {

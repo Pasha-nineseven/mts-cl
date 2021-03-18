@@ -50,6 +50,15 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('build/css'))
 });
 
+
+gulp.task('css-new', ['sass'], function() {
+    return gulp.src('app/css/new-style.css')
+        .pipe(cssnano())
+        // .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('app/css'))
+        .pipe(gulp.dest('build/css'))
+});
+
 gulp.task('browser-sync', function() {
     browserSync({
     	server: {
@@ -71,7 +80,7 @@ gulp.task('browser-sync', function() {
 // });
 
 
-gulp.task('watch', ['browser-sync','css-libs', 'scripts',], function() {
+gulp.task('watch', ['browser-sync','css-libs','css-new','scripts',], function() {
     gulp.watch(['app/scss/*.scss' , 'app/scss/components/*.scss'], ['sass']); // Наблюдение за sass файлами
     // Наблюдение за другими типами файлов
     gulp.watch('app/*.html', browserSync.reload);
@@ -98,7 +107,7 @@ gulp.task('img', function(){
 });
 
 //BUILD version
-gulp.task('build', ['clean', 'img', 'sass', 'css-libs', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'sass', 'css-libs','css-new', 'scripts'], function() {
 
     var buildCss = gulp.src([
         'app/css/style.css',
@@ -124,4 +133,4 @@ gulp.task('clear', function() {
 
 
 //DEFAULT
-gulp.task('default', ['watch','browser-sync','css-libs', 'scripts',]);
+gulp.task('default', ['watch','browser-sync','css-libs','css-new', 'scripts',]);
